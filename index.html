@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Forever Scrapbook 💕</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@700&display=swap');
+
+  :root {
+    --pink: #ffadd4;       /* Soft cute pastel pink */
+    --lilac: #c8a2c8;      /* Soft lilac accent */
+    --pink-dark: #ff69b4;  /* For hover/active */
+    --bg: #fff5fb;         /* Very light pinkish background */
+  }
+
+  body {
+    font-family: 'Comic Neue', cursive;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='%23ffadd4'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 16 16, auto;
+    background: var(--bg);
+    color: #333;
+  }
+
+  .heart-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .heart {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.5;
+    animation: floatHeart 18s linear infinite;
+    color: var(--pink);
+  }
+  @keyframes floatHeart {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(720deg); }
+  }
+
+  .page {
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+  .polaroid {
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: rotate(-3deg);
+    padding: 15px;
+    border: 12px solid #fff;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  .polaroid:hover { transform: rotate(2deg) scale(1.04); }
+
+  .note {
+    background: #fff9e6;
+    box-shadow: 6px 6px 0 rgba(200,162,200,0.3);
+    padding: 16px;
+    transform: rotate(2deg);
+    border-left: 6px solid var(--lilac);
+  }
+
+  /* Mobile improvements for page 5 */
+  @media (max-width: 640px) {
+    h2 { font-size: 2.5rem; }
+    .text-9xl { font-size: 5rem; line-height: 1; }
+    .text-5xl { font-size: 2.25rem; }
+    #page5 .p-12 { padding: 2rem 1rem; }
+    #page5 .space-y-12 > div { margin-bottom: 3rem; }
+    .max-w-md { max-width: 100%; padding: 0 1rem; }
+  }
+
+  /* General mobile tweaks */
+  @media (max-width: 480px) {
+    .text-8xl { font-size: 4rem; }
+    .text-6xl { font-size: 3.5rem; }
+    nav .text-xl { font-size: 1.1rem; }
+    nav { padding: 1rem; }
+  }
+</style>
+</head>
+<body class="min-h-screen relative overflow-hidden">
+
+<!-- Floating hearts -->
+<div class="heart-bg" id="hearts"></div>
+
+<!-- Navbar -->
+<nav class="bg-white/90 backdrop-blur-md shadow-lg fixed top-0 w-full z-50 border-b-4 border-[var(--lilac)]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-4">
+    <div class="text-3xl font-bold text-[var(--pink)] flex items-center gap-2">
+      💕 Our Scrapbook
+    </div>
+    <div class="flex flex-wrap gap-4 sm:gap-6 text-lg sm:text-xl font-bold text-[var(--lilac)]">
+      <button onclick="showPage(1)" class="hover:text-[var(--pink)] transition">Home</button>
+      <button onclick="showPage(2)" class="hover:text-[var(--pink)] transition">About Her</button>
+      <button onclick="showPage(3)" class="hover:text-[var(--pink)] transition">About Your Girlfriend</button>
+      <button onclick="showPage(4)" class="hover:text-[var(--pink)] transition">Our Memories</button>
+      <button onclick="showPage(5)" class="hover:text-[var(--pink)] transition">Our Forever</button>
+    </div>
+  </div>
+</nav>
+
+<div class="pt-20 sm:pt-24 max-w-6xl mx-auto px-4 sm:px-6 pb-20">
+
+<!-- PAGE 1 - Home -->
+<div id="page1" class="page">
+  <div class="text-center py-16 sm:py-20">
+    <h1 class="text-6xl sm:text-8xl font-bold text-[var(--pink)] mb-6 tracking-wide" style="font-family: 'Dancing Script', cursive;">
+      To My Forever Love 💖
+    </h1>
+    <p class="text-2xl sm:text-3xl text-[var(--lilac)]">October 11, 2025 — the day my world became perfect</p>
+    <div class="mt-12 sm:mt-16 text-5xl sm:text-6xl">✨❤️✨</div>
+  </div>
+</div>
+
+<!-- PAGE 2 - About Her -->
+<div id="page2" class="page hidden">
+  <h2 class="text-4xl sm:text-5xl font-bold text-center text-[var(--pink)] mb-8">About My Babygirl 💕</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8" id="herPhotos"></div>
+  <div class="mt-10 sm:mt-12">
+    <textarea id="herBio" class="w-full h-40 p-5 rounded-3xl border-4 border-[var(--lilac)] text-lg focus:border-[var(--pink)]" placeholder="Write something sweet about her..."></textarea>
+    <button onclick="saveBio(2)" class="mt-4 bg-[var(--pink)] hover:bg-[var(--pink-dark)] text-white px-8 py-3 rounded-full font-bold transition">Save Note 💌</button>
+  </div>
+  <input type="file" id="herUpload" multiple accept="image/*" class="hidden" onchange="uploadPhotos(2)">
+  <button onclick="document.getElementById('herUpload').click()" class="mt-8 bg-white border-4 border-[var(--lilac)] text-[var(--pink)] px-8 sm:px-10 py-4 rounded-3xl font-bold hover:bg-[var(--lilac)]/10 transition">Add her photos 📸</button>
+</div>
+
+<!-- PAGE 3 - About Your Girlfriend (you the creator) -->
+<div id="page3" class="page hidden">
+  <h2 class="text-4xl sm:text-5xl font-bold text-center text-[var(--pink)] mb-8">About Your Girlfriend 🥰</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8" id="myPhotos"></div>
+  <div class="mt-10 sm:mt-12">
+    <textarea id="myBio" class="w-full h-40 p-5 rounded-3xl border-4 border-[var(--lilac)] text-lg focus:border-[var(--pink)]" placeholder="Write something sweet about me..."></textarea>
+    <button onclick="saveBio(3)" class="mt-4 bg-[var(--pink)] hover:bg-[var(--pink-dark)] text-white px-8 py-3 rounded-full font-bold transition">Save Note 💌</button>
+  </div>
+  <input type="file" id="myUpload" multiple accept="image/*" class="hidden" onchange="uploadPhotos(3)">
+  <button onclick="document.getElementById('myUpload').click()" class="mt-8 bg-white border-4 border-[var(--lilac)] text-[var(--pink)] px-8 sm:px-10 py-4 rounded-3xl font-bold hover:bg-[var(--lilac)]/10 transition">Add my photos 📸</button>
+</div>
+
+<!-- PAGE 4 - Memories (unchanged except colors) -->
+<div id="page4" class="page hidden">
+  <h2 class="text-4xl sm:text-5xl font-bold text-center text-[var(--pink)] mb-8">Our Memories 📷</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6" id="memoryGrid"></div>
+  
+  <div class="mt-10 sm:mt-12 bg-white p-6 sm:p-8 rounded-3xl shadow-xl border-4 border-[var(--lilac)]">
+    <h3 class="text-2xl sm:text-3xl font-bold text-[var(--pink)] mb-6">Add a new memory</h3>
+    <input type="file" id="memoryUpload" accept="image/*" class="mb-6 block w-full">
+    <input id="memoryCaption" type="text" placeholder="Where & when?" class="w-full p-4 rounded-2xl border-4 border-[var(--lilac)] text-lg mb-6 focus:border-[var(--pink)]">
+    <button onclick="addMemory()" class="bg-[var(--pink)] hover:bg-[var(--pink-dark)] text-white px-10 sm:px-12 py-4 rounded-3xl font-bold text-lg sm:text-xl transition">Stick it in the scrapbook 💖</button>
+  </div>
+</div>
+
+<!-- PAGE 5 - Forever Counter (now mobile-optimized) -->
+<div id="page5" class="page hidden text-center">
+  <div class="max-w-lg mx-auto bg-white/95 rounded-3xl shadow-2xl p-6 sm:p-10 md:p-12 border-8 border-[var(--lilac)] backdrop-blur-sm">
+    <h2 class="text-5xl sm:text-6xl font-bold text-[var(--pink)] mb-8 sm:mb-10" style="font-family: 'Dancing Script', cursive;">Our Monthsary 💞</h2>
+    
+    <div class="space-y-10 sm:space-y-12">
+      <div>
+        <div class="text-3xl sm:text-5xl text-[var(--lilac)]">Months Together</div>
+        <div id="months" class="text-7xl sm:text-9xl font-bold text-[var(--pink)]">4</div>
+      </div>
+      
+      <div>
+        <div class="text-3xl sm:text-5xl text-[var(--lilac)]">Days Together</div>
+        <div id="days" class="text-7xl sm:text-9xl font-bold text-[var(--pink)]">122</div>
+      </div>
+      
+      <div>
+        <div class="text-3xl sm:text-5xl text-[var(--lilac)]">Hours Together</div>
+        <div id="hours" class="text-7xl sm:text-9xl font-bold text-[var(--pink)]">2949</div>
+      </div>
+    </div>
+
+    <button onclick="endItAll()" class="mt-12 sm:mt-16 bg-red-600 hover:bg-red-700 text-white text-lg sm:text-xl font-bold px-10 sm:px-12 py-5 sm:py-6 rounded-3xl shadow-lg transition">
+      End it all 💔
+    </button>
+  </div>
+</div>
+
+</div>
+
+<!-- Global Love Notes -->
+<div class="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 bg-white/95 border-4 border-[var(--lilac)] rounded-3xl p-5 sm:p-6 shadow-2xl max-w-xs sm:max-w-sm backdrop-blur-sm">
+  <h4 class="font-bold text-[var(--pink)] text-lg sm:text-xl mb-4">Love Notes 💌</h4>
+  <div id="notesList" class="space-y-4 max-h-64 sm:max-h-80 overflow-y-auto"></div>
+  <div class="mt-4 sm:mt-6 flex gap-2 sm:gap-3">
+    <input id="newNote" placeholder="Write a cute note..." class="flex-1 border-4 border-[var(--lilac)] rounded-2xl px-4 py-3 text-base focus:border-[var(--pink)]">
+    <button onclick="addNote()" class="bg-[var(--pink)] hover:bg-[var(--pink-dark)] text-white px-6 sm:px-8 rounded-2xl">Send ❤️</button>
+  </div>
+</div>
+
+<script>
+// Create floating hearts
+function createHearts() {
+  const container = document.getElementById('hearts');
+  for (let i = 0; i < 35; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.textContent = ['❤️','💗','💖','💕','💞'][Math.floor(Math.random()*5)];
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 20 + 12) + 's';
+    heart.style.animationDelay = '-' + Math.random() * 25 + 's';
+    heart.style.fontSize = (Math.random() * 28 + 18) + 'px';
+    container.appendChild(heart);
+  }
+}
+createHearts();
+
+// Page switching
+function showPage(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+  document.getElementById('page'+n).classList.remove('hidden');
+}
+
+// Data & storage
+let data = {
+  herPhotos: [], myPhotos: [], memories: [], notes: [],
+  herBio: "She is the most beautiful, kind, and perfect girl in the world ❤️",
+  myBio: "I'm the luckiest because she chose me 🥹"
+};
+
+function loadData() {
+  const saved = localStorage.getItem('scrapbookData');
+  if (saved) data = JSON.parse(saved);
+}
+function saveData() { localStorage.setItem('scrapbookData', JSON.stringify(data)); }
+
+// Render functions (photos, memories, notes) - same as before but with new colors applied via CSS
+function renderPhotos(section) {
+  const container = document.getElementById(section === 2 ? 'herPhotos' : 'myPhotos');
+  container.innerHTML = '';
+  const photos = section === 2 ? data.herPhotos : data.myPhotos;
+  photos.forEach(src => {
+    const div = document.createElement('div');
+    div.className = 'polaroid';
+    div.innerHTML = `<img src="${src}" class="w-full rounded-2xl">`;
+    container.appendChild(div);
+  });
+}
+
+function uploadPhotos(section) {
+  const input = document.getElementById(section === 2 ? 'herUpload' : 'myUpload');
+  Array.from(input.files).forEach(file => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      if (section === 2) data.herPhotos.push(e.target.result);
+      else data.myPhotos.push(e.target.result);
+      saveData();
+      renderPhotos(section);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function saveBio(section) {
+  const ta = document.getElementById(section === 2 ? 'herBio' : 'myBio');
+  if (section === 2) data.herBio = ta.value;
+  else data.myBio = ta.value;
+  saveData();
+  alert("Note saved with all my love 💕");
+}
+
+function renderMemories() {
+  const grid = document.getElementById('memoryGrid');
+  grid.innerHTML = '';
+  data.memories.forEach(m => {
+    const div = document.createElement('div');
+    div.className = 'polaroid';
+    div.innerHTML = `
+      <img src="${m.src}" class="w-full rounded-2xl">
+      <div class="text-center mt-4 text-[var(--pink)] font-bold">${m.caption}</div>
+      <div class="text-xs text-center text-[var(--lilac)] mt-1">${m.date}</div>
+    `;
+    grid.appendChild(div);
+  });
+}
+
+function addMemory() {
+  const fileInput = document.getElementById('memoryUpload');
+  const caption = document.getElementById('memoryCaption').value || "Our moment 💕";
+  if (!fileInput.files[0]) return alert("Please choose a photo first 🥺");
+  
+  const reader = new FileReader();
+  reader.onload = e => {
+    data.memories.push({
+      src: e.target.result,
+      caption,
+      date: new Date().toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'})
+    });
+    saveData();
+    renderMemories();
+    fileInput.value = '';
+    document.getElementById('memoryCaption').value = '';
+    alert("Memory added! 📸");
+  };
+  reader.readAsDataURL(fileInput.files[0]);
+}
+
+function renderNotes() {
+  const list = document.getElementById('notesList');
+  list.innerHTML = '';
+  data.notes.forEach(note => {
+    const div = document.createElement('div');
+    div.className = 'note text-base sm:text-lg';
+    div.innerHTML = `<p>${note.text}</p><div class="text-xs text-right text-[var(--lilac)] mt-2">${note.date}</div>`;
+    list.appendChild(div);
+  });
+}
+
+function addNote() {
+  const input = document.getElementById('newNote');
+  if (!input.value) return;
+  data.notes.unshift({
+    text: input.value,
+    date: new Date().toLocaleDateString()
+  });
+  saveData();
+  renderNotes();
+  input.value = '';
+}
+
+// Counter
+function updateCounter() {
+  const start = new Date('2025-10-11');
+  const now = new Date();
+  const diffMs = now - start;
+  const totalDays = Math.floor(diffMs / (86400 * 1000));
+  const totalHours = Math.floor(diffMs / (3600 * 1000));
+  const months = Math.floor(totalDays / 30); // approx
+
+  document.getElementById('months').textContent = months;
+  document.getElementById('days').textContent = totalDays;
+  document.getElementById('hours').textContent = totalHours;
+}
+
+// End button
+function endItAll() {
+  if (confirm("Are you really sure you want to end our forever? 💔")) {
+    localStorage.clear();
+    document.body.innerHTML = `<div class="min-h-screen bg-black flex items-center justify-center text-white text-5xl sm:text-6xl font-bold">💔 It was beautiful while it lasted...</div>`;
+  }
+}
+
+// Init
+window.onload = () => {
+  loadData();
+  renderPhotos(2); renderPhotos(3);
+  renderMemories(); renderNotes();
+  document.getElementById('herBio').value = data.herBio;
+  document.getElementById('myBio').value = data.myBio;
+  showPage(1);
+  updateCounter();
+  setInterval(updateCounter, 60000);
+};
+</script>
+</body>
+</html>
